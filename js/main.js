@@ -12,7 +12,7 @@ function pushtoDom(input) {
     var i = 0;
 
     function tvShow() {
-        myVar = setTimeout(function() {
+        setTimeout(function() {
             embedImage(i);
         }, 2000);
     }
@@ -22,7 +22,8 @@ function pushtoDom(input) {
         jai = "<img src =" + src + ">";
         document.querySelector('.tvshow').innerHTML = jai;
         i++;
-        if (i === 24) { i = 0; }
+        console.log("length:",response.data.length);
+        if (i === (response.data.length -1)) { i = 0; }
         tvShow();
     }
 
